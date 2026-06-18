@@ -1,0 +1,18 @@
+[tool.poetry]
+package-mode = false
+name = "aws-uploader-performance-tests"
+version = "0.1.0"
+description = "Locust-based infrastructure load tests for the ONS Council Tax Uploader."
+authors = ["Elinor Thorne <elinor.thorne@ons.gov.uk>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+locust = "^2.44.3"
+requests = "^2.34.2"
+boto3 = {version = "^1.43.32", optional = true}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
