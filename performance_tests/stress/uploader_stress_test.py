@@ -3,8 +3,8 @@ import logging
 
 from locust import HttpUser, between, events, task
 
-from config.env_config import Config
 from behaviours.uploader_behaviour import UploaderBehaviour
+from config.env_config import Config
 from shapes import StressShape  # yes, this import is being used. Locust is picking it up automatically, otherwise the default shape is used.
 
 logger = logging.getLogger("uploader-locust.stress")
