@@ -1,4 +1,8 @@
+import logging
+
 from locust import LoadTestShape
+
+logger = logging.getLogger("locust.runners")
 
 class StressShape(LoadTestShape):
     """
@@ -24,6 +28,7 @@ class StressShape(LoadTestShape):
     ]
 
     def tick(self):
+        logger.info("Applying StressShape to stress test")
         run_time = self.get_run_time()
         for stage in self.stages:
             if run_time < stage["duration"]:
