@@ -18,8 +18,6 @@ class SpikeShape(LoadTestShape):
       240+:   done
     """
 
-    logger.info("Applying SpikeShape to spike test")
-
     stages = [
         {"duration": 10, "users": 1, "spawn_rate": 1},
         {"duration": 11, "users": 100, "spawn_rate": 100},  # Instant spike
@@ -29,6 +27,7 @@ class SpikeShape(LoadTestShape):
     ]
 
     def tick(self):
+        logger.info("Applying SpikeShape to spike test")
         run_time = self.get_run_time()
         for stage in self.stages:
             if run_time < stage["duration"]:
